@@ -1,194 +1,212 @@
 <h1 align="center"> 🏦 MDBank AI </h1>
 
-<img width="1100" height="580" alt="ChatGPT Image 4 de jun  de 2026, 14_58_19" src="https://github.com/user-attachments/assets/69fd6095-1584-4a85-b758-90ba297becc3" />
+<img width="1100" height="580" alt="MDBank AI" src="https://github.com/user-attachments/assets/69fd6095-1584-4a85-b758-90ba297becc3" />
 
 ---
 
-## 💻 Tecnologias utilizadas no projeto
+## 💻 Technologies Used in the Project
 
-<img loading="lazy" src="https://img.shields.io/badge/Python-darkblue"/>      <img loading="lazy" src="https://img.shields.io/badge/FastAPI-purple"/>      <img loading="lazy" src="https://img.shields.io/badge/FastMCP-pink"/>      <img loading="lazy" src="https://img.shields.io/badge/React-darkgreen"/>      <img loading="lazy" src="https://img.shields.io/badge/Streamlit-red"/>      <img loading="lazy" src="https://img.shields.io/badge/Docker_Compose-blue"/>      <img loading="lazy" src="https://img.shields.io/badge/JavaScript-yellow"/>     <img loading="lazy" src="https://img.shields.io/badge/A2A-green"/>     
-
----
-
-## 📌 Sobre
-O **MDBank AI** foi desenvolvido durante o curso **Alura - Protocolos e arquitetura para construção de agentes: MCP, A2A, AG-UI e Backend for Agents (BFA)**.
-
-O objetivo do projeto foi construir uma arquitetura multiagente aplicada a um cenário bancário, explorando protocolos modernos de comunicação entre agentes, ferramentas, front-end e backend.
-
-A aplicação simula um assistente bancário inteligente capaz de compreender a intenção do usuário, rotear a solicitação para o agente correto e executar ações relacionadas a serviços do MDBank, como abertura de conta e consulta/solicitação de cartão de crédito.
+<img loading="lazy" src="https://img.shields.io/badge/Python-darkblue"/>      <img loading="lazy" src="https://img.shields.io/badge/FastAPI-purple"/>      <img loading="lazy" src="https://img.shields.io/badge/FastMCP-pink"/>      <img loading="lazy" src="https://img.shields.io/badge/React-darkgreen"/>      <img loading="lazy" src="https://img.shields.io/badge/Streamlit-red"/>      <img loading="lazy" src="https://img.shields.io/badge/Docker_Compose-blue"/>      <img loading="lazy" src="https://img.shields.io/badge/JavaScript-yellow"/>     <img loading="lazy" src="https://img.shields.io/badge/A2A-green"/>
 
 ---
 
-## 🧠 Objetivos do projeto
+## 📌 About
 
-Este projeto teve como foco praticar a construção de arquiteturas reais para agentes de IA, indo além de um chatbot simples.
+**MDBank AI** was developed during the **Alura - Protocols and Architecture for Building Agents: MCP, A2A, AG-UI, and Backend for Agents (BFA)** course.
 
-Os principais objetivos foram:
+The goal of this project was to build a multi-agent architecture applied to a banking scenario, exploring modern protocols for communication between agents, tools, the front end, and the backend.
 
-- Projetar uma arquitetura multiagente distribuída
-- Utilizar protocolos como **MCP**, **A2A** e **AG-UI**
-- Implementar uma camada **Backend for Agents (BFA)**
-- Separar regras de negócio da camada de agentes
-- Criar agentes especializados para diferentes intenções bancárias
-- Integrar front-end, backend, agentes e ferramentas externas
-- Executar múltiplos serviços isolados com Docker Compose
+The application simulates an intelligent banking assistant capable of understanding the user's intent, routing the request to the appropriate agent, and performing actions related to MDBank services, such as opening a bank account and checking or requesting a credit card.
 
 ---
 
-## 🏗️ Arquitetura do sistema
+## 🧠 Project Goals
 
-A arquitetura do MDBank AI é composta por diferentes camadas responsáveis por comunicação, roteamento, regras de negócio e execução dos agentes.
+This project focused on practicing the development of real-world AI agent architectures, going beyond a simple chatbot.
+
+The main goals were:
+
+* Design a distributed multi-agent architecture
+* Use protocols such as **MCP**, **A2A**, and **AG-UI**
+* Implement a **Backend for Agents (BFA)** layer
+* Separate business rules from the agent layer
+* Create specialized agents for different banking intents
+* Integrate the front end, backend, agents, and external tools
+* Run multiple isolated services with Docker Compose
+
+---
+
+## 🏗️ System Architecture
+
+The MDBank AI architecture consists of different layers responsible for communication, routing, business rules, and agent execution.
 
 <p align="center">
-<img width="500" height="700" alt="Arquitetura_AgentMDBank pdf" src="https://github.com/user-attachments/assets/7a7d34ab-11f3-438d-b2f9-5b1853a41da8" />
-
+<img width="500" height="700" alt="MDBank Agent Architecture" src="https://github.com/user-attachments/assets/7a7d34ab-11f3-438d-b2f9-5b1853a41da8" />
 </p>
 
 ---
 
-## 🤖 Agentes do sistema
-O projeto utiliza agentes especializados para lidar com diferentes tipos de solicitação do usuário.
+## 🤖 System Agents
 
-### 🏦 Agente de Abertura de Conta
-Responsável por conduzir o fluxo de abertura de conta bancária.
+The project uses specialized agents to handle different types of user requests.
 
-Esse agente pode:
-- solicitar dados necessários do usuário
-- validar informações recebidas
-- criar ou buscar uma conta existente
-- retornar mensagens personalizadas ao usuário
+### 🏦 Account Opening Agent
 
-### 💳 Agente de Cartão de Crédito
-Responsável por lidar com solicitações relacionadas a cartões.
+Responsible for managing the bank account opening process.
 
-Esse agente pode:
-- consultar dados de cartão
-- solicitar cartão de crédito
-- exibir número, tipo e limite do cartão
-- formatar respostas com informações destacadas
+This agent can:
+
+* Request the necessary user information
+* Validate the information received
+* Create or retrieve an existing account
+* Return personalized messages to the user
+
+### 💳 Credit Card Agent
+
+Responsible for handling credit card-related requests.
+
+This agent can:
+
+* Retrieve credit card information
+* Request a credit card
+* Display the card number, type, and limit
+* Format responses with highlighted information
 
 ### 🧭 Supervisor
 
-Responsável por identificar a intenção do usuário e encaminhar a solicitação para o agente adequado.
-Exemplos de intenções:
+Responsible for identifying the user's intent and routing the request to the appropriate agent.
 
-- “Quero abrir uma conta”
-- “Quero um cartão de crédito”
-- “Quando exibir o número do meu cartão...”
+Examples of intents:
+
+* “I want to open an account”
+* “I want a credit card”
+* “When displaying my card number...”
 
 ---
 
-## 🔌 Protocolos explorados
+## 🔌 Protocols Explored
 
 ### MCP - Model Context Protocol
-O **MCP** foi utilizado para expor recursos e ferramentas que podem ser acessados pelos agentes.
-Exemplos de recursos e ferramentas do projeto:
-- `consultar_conta`
-- `consultar_cartao`
-- `criar_ou_buscar_conta`
-- `solicitar_cartao`
-- `gerar_prompt_abertura`
-- `abrir_conta_prompt`
-- `solicitar_cartao_prompt`
-- `obter_conta`
-- `obter_cartao`
+
+**MCP** was used to expose resources and tools that can be accessed by the agents.
+
+Examples of resources and tools used in the project:
+
+* `consultar_conta`
+* `consultar_cartao`
+* `criar_ou_buscar_conta`
+* `solicitar_cartao`
+* `gerar_prompt_abertura`
+* `abrir_conta_prompt`
+* `solicitar_cartao_prompt`
+* `obter_conta`
+* `obter_cartao`
 
 ---
 
 ### A2A - Agent to Agent
-O protocolo **A2A** foi utilizado para representar a comunicação entre agentes especializados.
-No projeto, ele permite que o roteador encaminhe solicitações para agentes como:
-- agente de abertura de conta
-- agente de cartão de crédito
-- agente de suporte ao cliente
+
+The **A2A** protocol was used to represent communication between specialized agents.
+
+In this project, it allows the router to forward requests to agents such as:
+
+* Account opening agent
+* Credit card agent
+* Customer support agent
 
 ---
 
 ### AG-UI
-O **AG-UI** foi explorado para criar uma interface interativa conectada aos agentes.
-A interface permite:
-- enviar mensagens ao assistente
-- visualizar o histórico de respostas
-- acompanhar o estado compartilhado
-- exibir respostas estruturadas dos agentes
-- renderizar informações como cartões, tabelas e destaques visuais
+
+**AG-UI** was explored to create an interactive interface connected to the agents.
+
+The interface allows users to:
+
+* Send messages to the assistant
+* View response history
+* Track the shared state
+* Display structured responses from the agents
+* Render information such as cards, tables, and visual highlights
 
 ---
 
 ### BFA - Backend for Agents
-A camada **Backend for Agents (BFA)** foi utilizada para organizar a lógica de negócio e desacoplar os agentes das regras internas da aplicação.
-Essa camada é responsável por:
-- centralizar regras de negócio
-- organizar fluxos complexos
-- expor serviços reutilizáveis
-- permitir integração entre agentes, ferramentas e dados
+
+The **Backend for Agents (BFA)** layer was used to organize business logic and decouple the agents from the application's internal rules.
+
+This layer is responsible for:
+
+* Centralizing business rules
+* Organizing complex workflows
+* Exposing reusable services
+* Enabling integration between agents, tools, and data
 
 ---
 
-## ✨ Funcionalidades
+## ✨ Features
 
-- Chat com assistente bancário inteligente
-- Roteamento automático de intenções
-- Abertura de conta bancária
-- Solicitação de cartão de crédito
-- Consulta de informações de cartão
-- Exibição de respostas estruturadas
-- Histórico de respostas
-- Estado compartilhado da conversa
-- Integração entre agentes especializados
-- Comunicação entre serviços via APIs
-- Execução com Docker Compose
+* Chat with an intelligent banking assistant
+* Automatic intent routing
+* Bank account opening
+* Credit card requests
+* Credit card information lookup
+* Structured response display
+* Response history
+* Shared conversation state
+* Integration between specialized agents
+* Communication between services via APIs
+* Execution with Docker Compose
 
 ---
 
-## 🖼️ Demonstração do projeto
+## 🖼️ Project Demo
 
-### Chat com abertura de conta
+### Account Opening Chat
 
 <p align="center">
-<img width="700" alt="Abertura de conta MDBank" src="https://github.com/user-attachments/assets/9ff7eba6-71a7-4fbd-bb28-f88a059fa3ae" />
-</p>
-
-
----
-
-### Consulta e exibição de cartão de crédito
-
-<p align="center">
-<img width="700" alt="Cartão de crédito MDBank" src="https://github.com/user-attachments/assets/ee06b663-ee38-47cd-a035-dc0fdab09699" />
+<img width="700" alt="MDBank Account Opening" src="https://github.com/user-attachments/assets/9ff7eba6-71a7-4fbd-bb28-f88a059fa3ae" />
 </p>
 
 ---
 
-### Histórico de respostas e estado compartilhado
+### Credit Card Lookup and Display
 
 <p align="center">
-<img width="700" alt="Histórico MDBank" src="https://github.com/user-attachments/assets/9ddfd458-88dd-4ae5-a328-e40b3ccf0d46" />
+<img width="700" alt="MDBank Credit Card" src="https://github.com/user-attachments/assets/ee06b663-ee38-47cd-a035-dc0fdab09699" />
 </p>
 
 ---
 
-## 📂 Estrutura do projeto
+### Response History and Shared State
+
+<p align="center">
+<img width="700" alt="MDBank Response History" src="https://github.com/user-attachments/assets/9ddfd458-88dd-4ae5-a328-e40b3ccf0d46" />
+</p>
+
+---
+
+## 📂 Project Structure
+
 ```text
 MDBank_agent/
 ├── MDBank/
-│   └── Supervisor / roteador principal
+│   └── Supervisor / main router
 │
 ├── agents/
 │   ├── abrir_conta/
 │   └── cartao_credito/
 │
 ├── bfa/
-│   └── Camada Backend for Agents
+│   └── Backend for Agents layer
 │
 ├── frontend/
-│   └── Interface Streamlit
+│   └── Streamlit interface
 │
 ├── frontend2/
-│   └── Interface React / AG-UI
+│   └── React / AG-UI interface
 │
 ├── recursos/
-│   └── Recursos e tools utilizados pelos agentes
+│   └── Resources and tools used by the agents
 │
 ├── docker-compose.yml
 └── README.md
@@ -196,60 +214,65 @@ MDBank_agent/
 
 ---
 
-## ▶️ Como executar o projeto
-### 1. Clone este repositório
+## ▶️ How to Run the Project
+
+### 1. Clone this repository
 
 ```bash
 git clone https://github.com/StellaLeoni2008/MDBank_agent.git
 ```
 
-### 2. Acesse a pasta do projeto
+### 2. Navigate to the project folder
 
 ```bash
 cd MDBank_agent
 ```
 
-### 3. Execute os serviços com Docker Compose
+### 3. Run the services with Docker Compose
 
 ```bash
 docker compose up --build
 ```
 
-### 4. Acesse a aplicação
+### 4. Access the application
 
-Após subir os containers, acesse a interface pelo navegador:
+After the containers are running, open the interface in your browser:
 
 ```text
 http://localhost:9090
 ```
+
 ---
 
-## 🧠 Conceitos praticados
-Durante o desenvolvimento deste projeto, foram praticados conceitos avançados de arquitetura para agentes de IA, incluindo:
-- Sistemas multiagente
-- Roteamento de intenções
-- Comunicação entre agentes
-- Protocolos MCP, A2A e AG-UI
-- Backend for Agents
-- Separação entre agentes e regras de negócio
-- Catálogo de agentes e ferramentas
-- Comunicação distribuída com JSON-RPC
-- Serviços MCP com FastMCP
-- Interfaces interativas com React e Streamlit
-- Estado compartilhado entre usuário e agentes
-- Docker Compose para orquestração de serviços
-- Modularização de sistemas com múltiplos containers
+## 🧠 Concepts Practiced
+
+During the development of this project, advanced concepts related to AI agent architecture were explored, including:
+
+* Multi-agent systems
+* Intent routing
+* Communication between agents
+* MCP, A2A, and AG-UI protocols
+* Backend for Agents
+* Separation between agents and business rules
+* Agent and tool catalogs
+* Distributed communication with JSON-RPC
+* MCP services with FastMCP
+* Interactive interfaces with React and Streamlit
+* Shared state between users and agents
+* Docker Compose for service orchestration
+* Modularization of systems using multiple containers
 
 ---
 
 <br>
 
-## 👩🏻‍💻 Autora
+## 👩🏻‍💻 Author
+
 | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/237313711?v=4" width=115><br><sub>Stella Leoni</sub>](https://github.com/StellaLeoni2008) |
-| :---: |
+| :---------------------------------------------------------------------------------------------------------------------------------------------------------: |
 
 ---
 
 <p align="right">
-11/06/2026
+06/11/2026
 </p>
